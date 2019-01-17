@@ -1,4 +1,6 @@
-##### master-mind-Game
+#####  master-mind-Game
+###### Subject: Projektowanie Aplikacji Internetowych (Web Application Development)
+###### Semester: 5
 ## Mastermind 
 **Tools**
 - Java 8
@@ -10,6 +12,8 @@
 - [] Add chat 
 - [] java.net Sockets
 - [] Multi rooms simultaneously
+- [] JUnit testing
+- [] Server configurarion using XML
 
 ## Rules of Game
 There are two players:
