@@ -6,7 +6,7 @@
 - Java socket (java.net)
 
 ## Tasks
-- [x] FXLM
+- [x] FXML
 - [ ] Logic of the game
 - [ ] Add chat 
 - [ ] java.net Sockets
