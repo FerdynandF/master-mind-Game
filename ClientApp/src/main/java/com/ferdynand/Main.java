@@ -13,7 +13,7 @@ public class Main extends Application {
     public void start(Stage primaryStage){
         try {
             Parent root = loader.load();
-            primaryStage.setTitle("Hello World");
+            primaryStage.setTitle("Mastermind Game");
             primaryStage.setScene(new Scene(root, 300, 275));
             primaryStage.show();
         } catch (Exception e) {
