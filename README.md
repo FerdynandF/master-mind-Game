@@ -9,6 +9,7 @@
 
 ## Tasks
 - [x] FXML
+- [ ] Server configuration via XML settings file
 - [ ] Logic of the game
 - [ ] Add chat 
 - [ ] java.net Sockets
