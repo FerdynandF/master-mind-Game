@@ -6,6 +6,7 @@
 - Java 8
 - JavaFX
 - Java socket (java.net)
+- JUnit 5
 
 ## Tasks
 - [x] FXML
