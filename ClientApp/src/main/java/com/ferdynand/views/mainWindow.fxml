@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,7 +17,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="650.0" maxWidth="830.0" minHeight="450.0" minWidth="630.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.ferdynand.controllers.MainWidnowController">
+<AnchorPane maxHeight="650.0" maxWidth="830.0" minHeight="450.0" minWidth="630.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.ferdynand.controllers.MainWindowController">
    <children>
       <GridPane alignment="CENTER" hgap="3.0" maxHeight="650.0" maxWidth="830.0" minHeight="450.0" minWidth="630.0" prefHeight="479.0" prefWidth="644.0" style="-fx-background-color: #823e00;" vgap="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <padding>
@@ -55,6 +56,7 @@
             <ColumnConstraints minWidth="10.0" prefWidth="25.0" />
          </columnConstraints>
          <children>
+            <!-- NUMBERS -->
             <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.8" text="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -135,6 +137,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
+            <!-- / NUMBERS -->
             <Circle fx:id="boardColor00" fill="WHITE" onMouseClicked="#setColor" radius="17.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="1.5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <effect>
                   <Glow level="0.4" />
@@ -489,7 +492,7 @@
             </Circle>
             <HBox prefHeight="30.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="12">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="24.0" prefWidth="94.0" text="You Lost!" textFill="#1b1b1b">
+                  <Label fx:id="resultLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="24.0" prefWidth="94.0" text="You Lost!" textFill="#1b1b1b">
                      <HBox.margin>
                         <Insets top="3.0" />
                      </HBox.margin>
@@ -706,6 +709,12 @@
                </children>
             </HBox>
             <Button fx:id="sendGuessButton" mnemonicParsing="false" onMouseClicked="#sendGuess" prefHeight="27.0" prefWidth="62.0" text="Check" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER" />
+            <Label fx:id="readyLabel" prefHeight="18.0" prefWidth="147.0" text="Click if you are ready!" GridPane.columnIndex="11" GridPane.columnSpan="2" GridPane.rowIndex="11">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ToggleButton fx:id="readyButton" mnemonicParsing="false" onMouseClicked="#readyButtonAction" prefHeight="27.0" prefWidth="116.0" text="Let's play!" textAlignment="CENTER" GridPane.columnIndex="11" GridPane.columnSpan="2" GridPane.rowIndex="12" />
          </children>
       </GridPane>
    </children>
