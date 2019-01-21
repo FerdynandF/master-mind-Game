@@ -12,8 +12,8 @@
 - [x] FXML
 - [x] Server configuration via XML settings file
 - [ ] Logic of the game
-- [ ] Add chat 
-- [ ] java.net Sockets
+- [X] Add chat 
+- [X] java.net Sockets
 - [x] Multi rooms simultaneously
 
 ## Rules of Game
