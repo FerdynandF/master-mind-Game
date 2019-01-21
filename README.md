@@ -10,11 +10,11 @@
 
 ## Tasks
 - [x] FXML
-- [ ] Server configuration via XML settings file
+- [x] Server configuration via XML settings file
 - [ ] Logic of the game
 - [ ] Add chat 
 - [ ] java.net Sockets
-- [ ] Multi rooms simultaneously
+- [x] Multi rooms simultaneously
 
 ## Rules of Game
 There are two players:
