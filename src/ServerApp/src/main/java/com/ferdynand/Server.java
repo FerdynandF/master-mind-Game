@@ -12,6 +12,7 @@ public class Server implements Runnable {
     private volatile int playersOnline = 0;
     private volatile boolean playerJoining = true;
     private boolean firstPlayer = true;
+    private boolean firstRoom = true;
     private SettingConnection settingConnection;
     private List<Room> roomList = new ArrayList<>();
 
@@ -26,9 +27,19 @@ public class Server implements Runnable {
         System.out.println("Waiting for connection...");
         try (ServerSocket serverSocket = new ServerSocket(settingConnection.getPort())) {
             while(true){
+                if(firstRoom){
+                    firstRoom = false;
+                    Room room = new Room(this, serverSocket);
+                    roomList.add(room);
+                    new Thread(room).start();
+                    playerJoining = false;
+                    System.out.println("The first room.");
+                    continue;
+                }
                 if(playersOnline % settingConnection.getPlayersInRoom() == 0 && playerJoining) {
                     Room room = new Room(this, serverSocket);
                     roomList.add(room);
+                    System.out.println("Other room.");
                     new Thread(room).start();
                     playerJoining = false;
                 }

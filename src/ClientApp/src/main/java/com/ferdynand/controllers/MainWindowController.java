@@ -39,10 +39,11 @@ public class MainWindowController {
     private Circle[][] board;
     private Circle[][] hint;
     private Circle[] colors;
-    private int gameRound;;
+    private int gameRound;
     private Circle currentCircleColorSelected;
     private Effect effect;
     private Paint currentColor;
+    private Paint hiddenColor;
 
     @FXML
     private Circle boardColor00, boardColor01, boardColor02, boardColor03,
@@ -139,6 +140,7 @@ public class MainWindowController {
         currentCircleColorSelected = colors[5];
         effect = colors[5].getEffect();
         currentColor = colors[5].getFill();
+        hiddenColor = boardColor100.getFill();
     }
 
 
@@ -194,10 +196,19 @@ public class MainWindowController {
                         case (Actions.GAME_BEGIN):
                             sendGuessButton.setVisible(true);
                             break;
+                        case (Actions.MAKER):
+                            player.setCodeMaker(true);
+                            player.setCodeBreaker(false);
+                            updateUIToMode();
+                            break;
+                        case (Actions.BREAKER):
+                            player.setCodeMaker(false);
+                            player.setCodeBreaker(true);
+                            updateUIToMode();
+                            break;
                         case (Actions.GUESS):
 
                             break;
-
                     }
                 }
             } catch (SocketException e) {
@@ -208,10 +219,33 @@ public class MainWindowController {
         }).start();
     }
 
+    private void updateUIToMode() throws IOException {
+        if(player.isCodeMaker()){
+            for (int i = 0; i < board[0].length; i++) {
+                board[0][i].setDisable(true);
+                board[10][i].setDisable(false);
+            }
+                sendGuessButton.setText("Send");
+        } else if (player.isCodeBreaker()){
+            for (int i = 0; i < board[0].length; i++) {
+                board[0][i].setDisable(false);
+                board[10][i].setDisable(true);
+            }
+                sendGuessButton.setText("Check");
+        } else {
+            throw new IOException();
+        }
+    }
+
     public void sendGuess(MouseEvent mouseEvent) {
         sendGuessButton.setDisable(true);
-        int[] guess = getUserGuess();
+        if(sendGuessButton.getText().equals("Check")){
 
+        }
+        if(sendGuessButton.getText().equals("Send")){
+
+        }
+//        int[] guess = getUserGuess();
 //        try{
 //            int[] serverHints =
 //        }
@@ -285,31 +319,59 @@ public class MainWindowController {
             readyButton.setDisable(true);
             readyLabel.setText("YOU ARE READY!");
         }
+        try{
+            objectOutputStream.reset();
+            clientPacket.getPlayer().setReady(true);
+            clientPacket.getPlayer().setPrevAction(Actions.READY);
+            objectOutputStream.writeObject(clientPacket);
+        } catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+
+
 
     }
 
-    public void enterButtonTextFieldAction(KeyEvent keyEvent) throws IOException{
+    public void enterButtonTextFieldAction(KeyEvent keyEvent){
         try{
             objectOutputStream.reset();
+            if(!inputTextField.getText().isEmpty() && keyEvent.getCode().equals(KeyCode.ENTER)) {
+                clientPacket.getChatMessage().setMessage(inputTextField.getText());
+                clientPacket.getPlayer().setPrevAction(Actions.CHAT);
+                objectOutputStream.writeObject(clientPacket);
+                inputTextField.clear();
+            }
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        if(!inputTextField.getText().isEmpty() && keyEvent.getCode().equals(KeyCode.ENTER)) {
-            clientPacket.getChatMessage().setMessage(inputTextField.getText());
-            clientPacket.getPlayer().setPrevAction(Actions.CHAT);
-            objectOutputStream.writeObject(clientPacket);
-            inputTextField.clear();
-        }
-
     }
 
-    public void sendButtonAction(ActionEvent actionEvent) throws IOException{
-        objectOutputStream.reset();
-        if(!inputTextField.getText().isEmpty()){
-            clientPacket.getChatMessage().setMessage(inputTextField.getText());
-            clientPacket.getPlayer().setPrevAction(Actions.CHAT);
+    public void sendButtonAction(ActionEvent actionEvent){
+        try {
+            objectOutputStream.reset();
+            if (!inputTextField.getText().isEmpty()) {
+                clientPacket.getChatMessage().setMessage(inputTextField.getText());
+                clientPacket.getPlayer().setPrevAction(Actions.CHAT);
+                objectOutputStream.writeObject(clientPacket);
+                inputTextField.clear();
+            }
+        } catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void shutdown() {
+        // cleanup code here...
+        try {
+            System.out.println("Stop");
+            clientPacket.getPlayer().setPrevAction(Actions.WINDOW_CLOSE);
             objectOutputStream.writeObject(clientPacket);
-            inputTextField.clear();
+
+            objectOutputStream.close();
+            objectInputStream.close();
+            socket.close();
+        } catch (IOException e){
+            System.out.println(e.getMessage());
         }
     }
 }

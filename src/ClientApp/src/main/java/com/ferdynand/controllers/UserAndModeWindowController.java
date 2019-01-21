@@ -64,6 +64,10 @@ public class UserAndModeWindowController {
             stage.setScene(scene);
             controller.setGameStage(stage);
             previousStage.close();
+            stage.setOnHidden(e -> {
+                controller.shutdown();
+                Platform.exit();
+            });
             stage.show();
 
         } catch (IOException e) {

@@ -6,6 +6,7 @@ import main.java.com.ferdynand.player.Actions;
 
 import java.io.*;
 import java.net.Socket;
+import java.net.SocketException;
 
 public class PlayerHandler implements Runnable {
     private Socket socket;
@@ -20,7 +21,7 @@ public class PlayerHandler implements Runnable {
 
     @Override
     public void run() {
-        try{
+        try {
             server.setPlayersOnline(server.getPlayersOnline() + 1);
             room.setPlayersConnected(room.getPlayersConnected() + 1);
             server.setPlayerJoining(true);
@@ -29,12 +30,12 @@ public class PlayerHandler implements Runnable {
             objectInputStream = new ObjectInputStream(socket.getInputStream());
             objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
             room.getObjectOutputStreams().add(objectOutputStream);
-            while(true) {
+            while (true) {
                 packet = (ClientPacket) objectInputStream.readObject();
                 switch (packet.getPlayer().getPrevAction()) {
                     case (Actions.CHAT):
-                        if(!packet.getChatMessage().getMessage().isEmpty()) {
-                            for (ObjectOutputStream objectOutputStream : room.getObjectOutputStreams()){
+                        if (!packet.getChatMessage().getMessage().isEmpty()) {
+                            for (ObjectOutputStream objectOutputStream : room.getObjectOutputStreams()) {
                                 serverPacket.setAction(Actions.CHAT);
                                 serverPacket.setChatMessage(packet.getChatMessage());
                                 objectOutputStream.reset();
@@ -60,9 +61,24 @@ public class PlayerHandler implements Runnable {
                     case (Actions.CONNECTED):
                         room.getPlayers().add(packet.getPlayer());
                         break;
+                    case (Actions.WINDOW_CLOSE):
+                        objectOutputStream.close();
+                        socket.close();
                 }
             }
-        } catch (IOException |ClassNotFoundException e) {
+        } catch (EOFException e) {
+            try {
+            objectInputStream.close();
+            } catch (IOException ex ){
+                System.out.println("Close filed: " + ex.getMessage());
+            }
+        } catch (SocketException socex){
+            try {
+                socket.close();
+            } catch (IOException exc) {
+                System.out.println("Socket exc:" + exc.getMessage());
+            }
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

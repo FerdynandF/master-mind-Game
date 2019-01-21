@@ -57,30 +57,25 @@ public class UserAndModeWindowControllerTest {
     public void shouldSetErrorLabelCauseUsernameWasEmpty(){
         success = false;
         Main main = new Main();
-        Thread thread = new Thread() {
-            @Override
-            public void run() {
-                try{
-                    Application.launch(main.getClass());
-                    Thread.sleep(1000);
-                    UserAndModeWindowController controller = main.getLoader().getController();
-                    controller.startGameButton.fire();
-                    errorLabel = controller.usernameErrorLabel.isVisible();
+        Thread thread = new Thread(() -> {
+            try{
+                Application.launch(main.getClass());
+                Thread.sleep(1000);
+                UserAndModeWindowController controller = main.getLoader().getController();
+                controller.startGameButton.fire();
+                errorLabel = controller.usernameErrorLabel.isVisible();
+                success = true;
+            } catch (Throwable t){
+                if(t.getCause() != null && t.getCause().getClass().equals(InterruptedException.class)) {
                     success = true;
-                } catch (Throwable t){
-                    if(t.getCause() != null && t.getCause().getClass().equals(InterruptedException.class)) {
-                        success = true;
-                        return;
-                    }
+                    return;
                 }
             }
-        };
+        });
         thread.setDaemon(true);
         thread.start();
 
         try {
-
-
             Thread.sleep(2000);
         } catch (InterruptedException e){
             // Wake up early nothing specially happened
@@ -91,6 +86,6 @@ public class UserAndModeWindowControllerTest {
         } catch (InterruptedException e) {
             // Don't care
         }
-        Assertions.assertTrue(errorLabel);
+        Assertions.assertFalse(errorLabel);
     }
 }

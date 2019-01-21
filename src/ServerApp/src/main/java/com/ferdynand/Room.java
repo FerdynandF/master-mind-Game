@@ -24,6 +24,7 @@ public class Room implements Runnable{
     private volatile int playersReady = 0;
     private volatile int playersConnected = 1;
     private boolean endOfTheGame = false;
+    private boolean playerGuessed = false;
 
 
     public Room(Server server, ServerSocket serverSocket) {
@@ -71,9 +72,45 @@ public class Room implements Runnable{
     }
 
     private void preparePlayersForGame() throws IOException {
-        sendToAll(Actions.CHAT, "Finally you can start the Game.");
-        sendToAll(Actions.GAME_BEGIN, null);
+        try {
+            sendToAll(Actions.CHAT, "Finally you can start the Game.");
+            sendToAll(Actions.GAME_BEGIN, null);
+            for (int i = 0; i < players.size(); i++) {
+                if (endOfTheGame) break;
+                serverPacket.setAction(Actions.MAKER);
+                objectOutputStreams.get(i).writeObject(serverPacket);
+                Thread.sleep(30);
+                sendToAll(Actions.CHAT, players.get(i).getUsername() + " is Code-Maker");
+                Thread.sleep(30);
+                waitForTheGuess();
+                if (i + 1 >= players.size())
+                    i = -1;
 
+            }
+        } catch (InterruptedException e){
+            System.out.println("Thread interrupted: " + e.getMessage());
+        }
+
+
+    }
+
+    private void waitForTheGuess() {
+        while (true){
+            synchronized (this) {
+                try {
+                    if(playerGuessed) {
+                        sendToAll(Actions.END_OF_GAME, null);
+                        sendToAll(Actions.CLEAR_UI, null);
+//*************************************************************************************
+//*************************************************************************************
+//*************************************************************************************
+                    }
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
+                }
+
+            }
+        }
     }
 
     private void sendToAll(String action, String message) throws IOException {

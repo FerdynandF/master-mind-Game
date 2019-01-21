@@ -8,8 +8,12 @@ public class Player implements Serializable {
     private boolean codeMaker = false;
     private boolean codeBreaker = false;
     private boolean ready = false;
+
+    public void setReady(boolean ready) {
+        this.ready = ready;
+    }
+
     private String prevAction;
-    public static int usersCount = 0;
 
     public boolean isReady() {
         return ready;
