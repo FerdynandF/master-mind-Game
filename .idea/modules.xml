@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ClientApp/ClientApp.iml" filepath="$PROJECT_DIR$/ClientApp/ClientApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ServerApp/ServerApp.iml" filepath="$PROJECT_DIR$/ServerApp/ServerApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/ClientApp/ClientApp.iml" filepath="$PROJECT_DIR$/src/ClientApp/ClientApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/ServerApp/ServerApp.iml" filepath="$PROJECT_DIR$/src/ServerApp/ServerApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/master-mind-Game.iml" filepath="$PROJECT_DIR$/.idea/master-mind-Game.iml" />
     </modules>
   </component>
