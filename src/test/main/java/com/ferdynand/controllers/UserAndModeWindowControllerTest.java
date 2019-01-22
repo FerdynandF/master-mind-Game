@@ -1,7 +1,8 @@
-package main.java.com.ferdynand.controllers;
+package java.com.ferdynand.controllers;
 
 import javafx.application.Application;
 import main.java.com.ferdynand.client.Main;
+import main.java.com.ferdynand.controllers.UserAndModeWindowController;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

@@ -29,9 +29,4 @@ public class Guess implements Serializable {
     public void setGameRound(int gameRound) {
         this.gameRound = gameRound;
     }
-
-    @Override
-    public String toString(){
-        return clientGuessOrHint.toString();
-    }
 }

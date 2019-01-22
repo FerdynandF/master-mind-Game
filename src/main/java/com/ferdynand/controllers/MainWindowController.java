@@ -436,7 +436,7 @@ public class MainWindowController {
         return code;
     }
 
-    private int getColorId(Circle circle) {
+    public int getColorId(Circle circle) {
         int id = 0;
         Color color = (Color)circle.getFill();
         if(color.equals((Color)color1.getFill()))
@@ -499,6 +499,24 @@ public class MainWindowController {
         } catch (IOException e){
             System.out.println(e.getMessage());
         }
+    }
+
+    public Paint getColor(int i ){
+        switch (i){
+            case 1:
+                return colors[i-1].getFill();
+            case 2:
+                return colors[i-1].getFill();
+            case 3:
+                return colors[i-1].getFill();
+            case 4:
+                return colors[i-1].getFill();
+            case 5:
+                return colors[i-1].getFill();
+            case 6:
+                return colors[i-1].getFill();
+        }
+        return null;
     }
 
     public void enterButtonTextFieldAction(KeyEvent keyEvent){
