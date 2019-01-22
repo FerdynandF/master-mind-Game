@@ -11,7 +11,7 @@
 ## Tasks
 - [x] FXML
 - [x] Server configuration via XML settings file
-- [ ] Logic of the game
+- [X] Logic of the game
 - [X] Add chat 
 - [X] java.net Sockets
 - [x] Multi rooms simultaneously
