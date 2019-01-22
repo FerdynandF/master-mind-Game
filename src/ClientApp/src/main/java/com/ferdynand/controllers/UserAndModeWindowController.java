@@ -64,6 +64,10 @@ public class UserAndModeWindowController {
             stage.setScene(scene);
             controller.setGameStage(stage);
             previousStage.close();
+            stage.setMaxHeight(500);
+            stage.setMaxWidth(650);
+            stage.setMinHeight(465);
+            stage.setMinWidth(630);
             stage.setOnHidden(e -> {
                 controller.shutdown();
                 Platform.exit();
@@ -77,7 +81,6 @@ public class UserAndModeWindowController {
 
     private void updatePlayer(Player player) {
         player.setUsername(userNameTextField.getText());
-        System.out.println(player.toString());
     }
 
     public void quit() {

@@ -14,10 +14,11 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="650.0" maxWidth="830.0" minHeight="450.0" minWidth="630.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.ferdynand.controllers.MainWindowController">
+<AnchorPane maxHeight="550.0" maxWidth="800.0" minHeight="450.0" minWidth="630.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.ferdynand.controllers.MainWindowController">
    <children>
       <GridPane alignment="CENTER" hgap="3.0" maxHeight="650.0" maxWidth="830.0" minHeight="450.0" minWidth="630.0" prefHeight="479.0" prefWidth="644.0" style="-fx-background-color: #823e00;" vgap="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <padding>
@@ -52,8 +53,8 @@
             <ColumnConstraints minWidth="10.0" prefWidth="50.0" />
             <ColumnConstraints minWidth="10.0" prefWidth="50.0" />
             <ColumnConstraints minWidth="10.0" prefWidth="50.0" />
-            <ColumnConstraints minWidth="10.0" prefWidth="50.0" />
-            <ColumnConstraints minWidth="10.0" prefWidth="25.0" />
+            <ColumnConstraints maxWidth="119.0" minWidth="10.0" prefWidth="72.0" />
+            <ColumnConstraints maxWidth="47.0" minWidth="0.0" prefWidth="47.0" />
          </columnConstraints>
          <children>
             <!-- NUMBERS -->
@@ -492,14 +493,23 @@
             </Circle>
             <HBox prefHeight="30.0" prefWidth="70.0" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="12">
                <children>
-                  <Label fx:id="resultLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="24.0" prefWidth="94.0" text="You Lost!" textFill="#1b1b1b">
+                  <StackPane>
                      <HBox.margin>
                         <Insets top="3.0" />
                      </HBox.margin>
-                     <font>
-                        <Font name="System Bold" size="19.0" />
-                     </font>
-                  </Label>
+                     <children>
+                        <Label fx:id="loseLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="24.0" prefWidth="94.0" text="You Lost!" textFill="#cdc900">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="winLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="24.0" prefWidth="94.0" text="You Win!" textFill="#d6d015">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
                </children>
             </HBox>
             <GridPane GridPane.columnIndex="6" GridPane.rowIndex="1">
@@ -693,31 +703,36 @@
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor></Circle>
-            <TextArea fx:id="chatArea" editable="false" focusTraversable="false" prefHeight="201.0" prefWidth="164.0" style="-fx-background-color: #fcd0a6; -fx-border-color: #fcd0a6;" GridPane.columnIndex="10" GridPane.columnSpan="3" GridPane.rowIndex="1" GridPane.rowSpan="7">
+            <TextArea fx:id="chatArea" editable="false" focusTraversable="false" prefHeight="268.0" prefWidth="213.0" style="-fx-background-color: #fcd0a6; -fx-border-color: #fcd0a6;" GridPane.columnIndex="10" GridPane.columnSpan="3" GridPane.rowIndex="1" GridPane.rowSpan="8">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
                <font>
-                  <Font size="12.0" />
+                  <Font size="11.0" />
                </font>
             </TextArea>
-            <HBox GridPane.columnIndex="10" GridPane.columnSpan="3" GridPane.rowIndex="8">
+            <HBox GridPane.columnIndex="10" GridPane.columnSpan="3" GridPane.rowIndex="9">
                <children>
                   <TextField fx:id="inputTextField" onKeyPressed="#enterButtonTextFieldAction" />
-                  <Button mnemonicParsing="false" onAction="#sendButtonAction" prefHeight="27.0" prefWidth="53.0" text="Send">
+                  <Button mnemonicParsing="false" onAction="#sendMessageButtonAction" prefHeight="27.0" prefWidth="53.0" text="Send">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Button>
                </children>
             </HBox>
-            <Button fx:id="sendGuessButton" mnemonicParsing="false" onMouseClicked="#sendGuess" prefHeight="27.0" prefWidth="62.0" text="Check" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER" />
-            <Label fx:id="readyLabel" prefHeight="18.0" prefWidth="147.0" text="Click if you are ready!" GridPane.columnIndex="11" GridPane.columnSpan="2" GridPane.rowIndex="11">
+            <Button fx:id="sendGuessButton" mnemonicParsing="false" onMouseClicked="#sendGuessAction" prefHeight="27.0" prefWidth="62.0" text="Send" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER" />
+            <Label fx:id="readyLabel" prefHeight="18.0" prefWidth="144.0" text="Click if you are ready!" GridPane.columnIndex="11" GridPane.columnSpan="2" GridPane.rowIndex="11">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <ToggleButton fx:id="readyButton" mnemonicParsing="false" onMouseClicked="#readyButtonAction" prefHeight="27.0" prefWidth="116.0" text="Let's play!" textAlignment="CENTER" GridPane.columnIndex="11" GridPane.columnSpan="2" GridPane.rowIndex="12" />
+            <StackPane GridPane.columnIndex="11" GridPane.columnSpan="2" GridPane.rowIndex="12">
+               <children>
+                  <ToggleButton fx:id="readyButton" mnemonicParsing="false" onMouseClicked="#readyButtonAction" prefHeight="27.0" prefWidth="116.0" text="Let's play!" textAlignment="CENTER" />
+                  <Button fx:id="newGameButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#newGameButtonAction" prefHeight="27.0" prefWidth="116.0" text="New Game" />
+               </children>
+            </StackPane>
          </children>
       </GridPane>
    </children>

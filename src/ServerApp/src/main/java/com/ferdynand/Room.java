@@ -15,16 +15,15 @@ public class Room implements Runnable{
     private Server server;
     private List<ObjectOutputStream> objectOutputStreams = new ArrayList<>();
 
-
-
     private ArrayList<Player> players = new ArrayList<>();
     private ArrayList<Player> sortedPlayers = new ArrayList<>();
     private ServerPacket serverPacket = new ServerPacket();
 
     private volatile int playersReady = 0;
     private volatile int playersConnected = 1;
-    private boolean endOfTheGame = false;
-    private boolean playerGuessed = false;
+    private int gameRound;
+    private int[] theCode = new int[4];
+    private int[] theGuess = new int[4];
 
 
     public Room(Server server, ServerSocket serverSocket) {
@@ -53,73 +52,43 @@ public class Room implements Runnable{
         new Thread(() -> {
             while(true) {
                 if (getPlayersReady() - server.getSettingConnection().getPlayersInRoom() == 0 && playersReady != 0){
-                   try {
-                       sendToAll(Actions.CHAT, Actions.WELCOME);
+                       sendToAll(Actions.CHAT, Actions.YOUCANSTART);
+                       try{
+                           Thread.sleep(30);
+                       } catch (InterruptedException e) {
+                           System.out.println(e.getMessage());
+                       }
+                       sendToAll(Actions.READY_FLAG, null);
                        sortedPlayers.addAll(players);
                        serverPacket.setPlayers(sortedPlayers);
                        break;
-                   } catch (IOException e) {
-                       e.printStackTrace();
-                   }
                 }
-            }
-            try {
-                preparePlayersForGame();
-            } catch (IOException e) {
-                e.printStackTrace();
             }
         }).start();
     }
 
-    private void preparePlayersForGame() throws IOException {
+    void sendToAll(String action, String message){
         try {
-            sendToAll(Actions.CHAT, "Finally you can start the Game.");
-            sendToAll(Actions.GAME_BEGIN, null);
-            for (int i = 0; i < players.size(); i++) {
-                if (endOfTheGame) break;
-                serverPacket.setAction(Actions.MAKER);
-                objectOutputStreams.get(i).writeObject(serverPacket);
-                Thread.sleep(30);
-                sendToAll(Actions.CHAT, players.get(i).getUsername() + " is Code-Maker");
-                Thread.sleep(30);
-                waitForTheGuess();
-                if (i + 1 >= players.size())
-                    i = -1;
-
+            for (ObjectOutputStream objectOutputStream : objectOutputStreams) {
+                serverPacket.setAction(action);
+                serverPacket.getChatMessage().setMessage(message);
+                objectOutputStream.reset();
+                objectOutputStream.writeObject(serverPacket);
             }
-        } catch (InterruptedException e){
-            System.out.println("Thread interrupted: " + e.getMessage());
-        }
-
-
-    }
-
-    private void waitForTheGuess() {
-        while (true){
-            synchronized (this) {
-                try {
-                    if(playerGuessed) {
-                        sendToAll(Actions.END_OF_GAME, null);
-                        sendToAll(Actions.CLEAR_UI, null);
-//*************************************************************************************
-//*************************************************************************************
-//*************************************************************************************
-                    }
-                } catch (IOException e) {
-                    System.out.println(e.getMessage());
-                }
-
-            }
+        } catch (IOException e) {
+            System.out.println("SenToAll exception: " + e.getMessage());
+            closeAll();
         }
     }
 
-    private void sendToAll(String action, String message) throws IOException {
-        for (ObjectOutputStream objectOutputStream : objectOutputStreams) {
-            serverPacket.setAction(action);
-            serverPacket.getChatMessage().setMessage(message);
-            objectOutputStream.reset();
-            objectOutputStream.writeObject(serverPacket);
+    private void closeAll() {
+        try{
+            objectOutputStreams.get(0).close();
+            objectOutputStreams.get(1).close();
+        } catch (IOException e){
+            System.out.println("Colse() refused: " + e.getMessage());
         }
+
     }
 
     public synchronized int getPlayersReady() {
@@ -144,6 +113,30 @@ public class Room implements Runnable{
 
     public synchronized ArrayList<Player> getPlayers() {
         return players;
+    }
+
+    public int[] getTheCode() {
+        return theCode;
+    }
+
+    public void setTheCode(int[] theCode) {
+        this.theCode = theCode;
+    }
+
+    public int[] getTheGuess() {
+        return theGuess;
+    }
+
+    public void setTheGuess(int[] theGuess) {
+        this.theGuess = theGuess;
+    }
+
+    public int getGameRound() {
+        return gameRound;
+    }
+
+    public void setGameRound(int gameRound) {
+        this.gameRound = gameRound;
     }
 }
 

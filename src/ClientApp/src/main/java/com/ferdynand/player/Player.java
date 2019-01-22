@@ -73,4 +73,9 @@ public class Player implements Serializable {
         }
         return returnString;
     }
+
+    public void switchMode() {
+        setCodeMaker(!isCodeMaker());
+        setCodeBreaker(!isCodeBreaker());
+    }
 }
