@@ -3,9 +3,9 @@
 ###### Semester: 5
 ## Mastermind 
 **Tools**
-- Java 8
+- Java SDK 1.8.0_191
 - JavaFX
-- Java socket (java.net)
+- Java sockets (java.net)
 - JUnit 5
 
 ## Tasks
@@ -15,6 +15,7 @@
 - [X] Add chat 
 - [X] java.net Sockets
 - [x] Multi rooms simultaneously
+- [x] JUnit 5 partly done
 
 ## Rules of Game
 There are two players:
