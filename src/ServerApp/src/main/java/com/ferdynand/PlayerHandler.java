@@ -93,8 +93,7 @@ public class PlayerHandler implements Runnable {
                         playersWaiting++;
                         sendObject(Actions.NEW_GAME, null);
                         Thread.sleep(30);
-                        String breakerOrMaker = getModeFromPacket();
-                        sendObject(Actions.CHAT, "You are: " + breakerOrMaker);
+                        sendObject(Actions.CHAT, "You are: " + getModeFromPacket());
                         Thread.sleep(20);
                         sendObject(Actions.READY_FLAG, null);
                         break;
@@ -112,9 +111,7 @@ public class PlayerHandler implements Runnable {
                             sendObject(Actions.BREAKER, null);
                         }
                         Thread.sleep(30);
-                        String breakerOrMaker2 = getModeFromPacket();
-                        objectOutputStream.reset();
-                        sendObject(Actions.CHAT, "You are: " + breakerOrMaker2);
+                        sendObject(Actions.CHAT, "You are: " + getModeFromPacket());
                         break;
 
                     case (Actions.WINDOW_CLOSE):
@@ -173,7 +170,7 @@ public class PlayerHandler implements Runnable {
         }
     }
 
-    private int[] getHintArray() throws IOException{
+    private int[] getHintArray() {
         int[] copyOfTheCode = Arrays.copyOf(room.getTheCode(), room.getTheCode().length);
         int[] message = Arrays.copyOf(room.getTheGuess(), room.getTheGuess().length);
         int[] feedback = new int[4]; // clues
