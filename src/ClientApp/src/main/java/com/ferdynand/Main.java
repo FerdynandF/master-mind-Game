@@ -16,11 +16,11 @@ public class Main extends Application {
             Parent root = loader.load();
             primaryStage.setTitle("Mastermind Game Intro");
             UserAndModeWindowController controller = loader.getController();
-            primaryStage.setScene(new Scene(root, 450, 340));
-            primaryStage.setMinWidth(400);
-            primaryStage.setMinHeight(250);
-            primaryStage.setMaxWidth(640);
-            primaryStage.setMaxHeight(490);
+            primaryStage.setScene(new Scene(root, 350, 220));
+            primaryStage.setMinWidth(330);
+            primaryStage.setMinHeight(200);
+            primaryStage.setMaxWidth(360);
+            primaryStage.setMaxHeight(300);
             controller.setPreviousStage(primaryStage);
             primaryStage.show();
         } catch (Exception e) {
