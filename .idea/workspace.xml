@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f57089e0-ae95-40e7-bc70-59469f07c751" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/ferdynand.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/master-mind-Game.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/client/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/controllers/MainWindowController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/controllers/UserAndModeWindowController$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/controllers/UserAndModeWindowController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/model/guess/Guess.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/model/message/ChatMessage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/model/packet/ClientPacket.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/model/packet/Packet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/model/packet/ServerPacket.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/model/player/Actions.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/model/player/Player.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/model/settings/SettingConnection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/model/settings/SettingConnectionDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/server/PlayerHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/server/Room.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/server/Server.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/view/UserAndModeWindow.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/masteMIND/main/java/com/ferdynand/view/mainWindow.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/META-INF/master-mind-Game.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/client/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/controllers/MainWindowController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/controllers/UserAndModeWindowController$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/controllers/UserAndModeWindowController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/model/guess/Guess.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/model/message/ChatMessage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/model/packet/ClientPacket.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/model/packet/Packet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/model/packet/ServerPacket.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/model/player/Actions.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/model/player/Player.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/model/settings/SettingConnection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/model/settings/SettingConnectionDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/server/PlayerHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/server/Room.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/server/Server.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/view/UserAndModeWindow.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/master-mind-Game/main/java/com/ferdynand/view/mainWindow.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/masteMIND/main/java/com/ferdynand/controllers/UserAndModeWindowControllerTest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/masteMIND/main/java/com/ferdynand/controllers/UserAndModeWindowControllerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/masteMIND/main/java/com/ferdynand/model/settings/SettingConnectionTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/master-mind-Game/main/java/com/ferdynand/controllers/UserAndModeWindowControllerTest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/master-mind-Game/main/java/com/ferdynand/controllers/UserAndModeWindowControllerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/master-mind-Game/main/java/com/ferdynand/model/settings/SettingConnectionTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/master-mind-Game/main/java/com/ferdynand/server/PlayerHandlerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/main/java/com/ferdynand/controllers/MainWindowControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/main/java/com/ferdynand/model/guess/GuessTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/main/main/java/com/ferdynand/server/ServerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ferdynand/controllers/MainWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ferdynand/controllers/MainWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ferdynand/model/guess/Guess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ferdynand/model/guess/Guess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/java/com/ferdynand/controllers/UserAndModeWindowControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/main/java/com/ferdynand/controllers/UserAndModeWindowControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/java/com/ferdynand/server/PlayerHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/main/java/com/ferdynand/server/PlayerHandlerTest.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ferdynand/model/guess/Guess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ferdynand/controllers/MainWindowController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-5010">
+              <caret line="189" column="5" lean-forward="true" selection-start-line="189" selection-start-column="5" selection-end-line="189" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ferdynand/controllers/UserAndModeWindowController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ferdynand/model/message/ChatMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="56">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ferdynand/server/Server.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ferdynand/client/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="602">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/test/main/java/com/ferdynand/model/settings/SettingConnectionTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ferdynand/controllers/MainWindowController.java" />
+        <option value="$PROJECT_DIR$/src/test/main/java/com/ferdynand/controllers/MainWindowControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/main/java/com/ferdynand/controllers/UserAndModeWindowControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/main/java/com/ferdynand/model/guess/GuessTest.java" />
+        <option value="$PROJECT_DIR$/src/test/main/java/com/ferdynand/server/PlayerHandlerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/main/main/java/com/ferdynand/server/ServerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ferdynand/model/guess/Guess.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1164" />
+    <option name="height" value="1057" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="master-mind-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="master-mind-Game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="master-mind-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="master-mind-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="master-mind-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="master-mind-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="master-mind-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="master-mind-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="master-mind-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="master-mind-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ferdynand" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="master-mind-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="master-mind-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ferdynand" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="master-mind-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="master-mind-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ferdynand" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="master-mind-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="master-mind-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ferdynand" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="master-mind-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="master-mind-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ferdynand" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="guess" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="master-mind-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="master-mind-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ferdynand" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="message" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="master-mind-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="master-mind-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ferdynand" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="player" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="master-mind-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="master-mind-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ferdynand" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="master-mind-Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="master-mind-Game" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ferdynand" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="main.java.com.ferdynand.server" />
+      <recent name="main.java.com.ferdynand.controllers" />
+      <recent name="main.java.com.ferdynand.model.guess" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.java.com.ferdynand.client.Main" />
+      <module name="master-mind-Game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.com.ferdynand.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.java.com.ferdynand.server.Server" />
+      <module name="master-mind-Game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.com.ferdynand.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GuessTest.byteToIntConversion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="master-mind-Game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.com.ferdynand.model.guess.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.java.com.ferdynand.model.guess" />
+      <option name="MAIN_CLASS_NAME" value="main.java.com.ferdynand.model.guess.GuessTest" />
+      <option name="METHOD_NAME" value="byteToIntConversion" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainWindowControllerTest.colorsConversionCheck" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="master-mind-Game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.com.ferdynand.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.java.com.ferdynand.controllers" />
+      <option name="MAIN_CLASS_NAME" value="main.java.com.ferdynand.controllers.MainWindowControllerTest" />
+      <option name="METHOD_NAME" value="colorsConversionCheck" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerTest.shouldLoadSettingsFromXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="master-mind-Game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.com.ferdynand.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.java.com.ferdynand.server" />
+      <option name="MAIN_CLASS_NAME" value="main.java.com.ferdynand.server.ServerTest" />
+      <option name="METHOD_NAME" value="shouldLoadSettingsFromXML" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerTest.shouldRunServer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="master-mind-Game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.com.ferdynand.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.java.com.ferdynand.server" />
+      <option name="MAIN_CLASS_NAME" value="main.java.com.ferdynand.server.ServerTest" />
+      <option name="METHOD_NAME" value="shouldRunServer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Server" />
+      <item itemvalue="JUnit.MainWindowControllerTest.colorsConversionCheck" />
+      <item itemvalue="JUnit.GuessTest.byteToIntConversion" />
+      <item itemvalue="JUnit.ServerTest.shouldRunServer" />
+      <item itemvalue="JUnit.ServerTest.shouldLoadSettingsFromXML" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Server" />
+        <item itemvalue="JUnit.ServerTest.shouldLoadSettingsFromXML" />
+        <item itemvalue="JUnit.ServerTest.shouldRunServer" />
+        <item itemvalue="JUnit.GuessTest.byteToIntConversion" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f57089e0-ae95-40e7-bc70-59469f07c751" name="Default Changelist" comment="" />
+      <created>1548155584871</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1548155584871</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Challange completed">
+      <created>1548156165208</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1548156165208</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="SettingConnectionTest_shouldReadAllConnectionSettingFromXMLFile - 2019.01.22 at 12h 18m 44s.xml">
+      <configuration name="SettingConnectionTest.shouldReadAllConnectionSettingFromXMLFile" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GuessTest_byteToIntConversion - 2019.01.22 at 12h 31m 14s.xml">
+      <configuration name="GuessTest.byteToIntConversion" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GuessTest_byteToIntConversion - 2019.01.22 at 12h 32m 14s.xml">
+      <configuration name="GuessTest.byteToIntConversion" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainWindowControllerTest_colorsConversionCheck - 2019.01.22 at 12h 45m 14s.xml">
+      <configuration name="MainWindowControllerTest.colorsConversionCheck" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ServerTest_shouldRunServer - 2019.01.22 at 12h 57m 13s.xml">
+      <configuration name="ServerTest.shouldRunServer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ServerTest_shouldRunServer - 2019.01.22 at 12h 57m 45s.xml">
+      <configuration name="ServerTest.shouldRunServer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ServerTest_shouldRunServer - 2019.01.22 at 12h 58m 43s.xml">
+      <configuration name="ServerTest.shouldRunServer" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ServerTest_shouldLoadSettingsFromXML - 2019.01.22 at 13h 02m 32s.xml">
+      <configuration name="ServerTest.shouldLoadSettingsFromXML" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ServerTest_shouldLoadSettingsFromXML - 2019.01.22 at 13h 03m 14s.xml">
+      <configuration name="ServerTest.shouldLoadSettingsFromXML" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1164" height="1057" extended-state="0" />
+    <layout>
+      <window_info id="Capture Tool" order="0" />
+      <window_info id="Designer" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.20446736" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32917964" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="3" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="8" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.3561786" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Palette&#9;" order="1" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Commander" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info anchor="right" id="Debug" order="8" weight="0.39862543" />
+      <window_info anchor="right" id="Maven" order="9" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Capture Tool" order="0" />
+      <window_info id="Designer" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.1690341" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32917964" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="3" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="8" />
+      <window_info anchor="bottom" id="Run" order="9" visible="true" weight="0.2519685" />
+      <window_info anchor="right" id="Maven" order="0" />
+      <window_info anchor="right" id="Palette" order="1" />
+      <window_info anchor="right" id="Palette&#9;" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Commander" order="6" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+      <window_info anchor="right" id="Debug" order="9" weight="0.39930555" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Challange completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Challange completed" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/test/main/java/com/ferdynand/model/settings/SettingConnectionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/javafx-src.zip!/javafx/scene/shape/Shape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="371" column="23" selection-start-line="371" selection-start-column="23" selection-end-line="371" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ferdynand/server/PlayerHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="173" column="11" selection-start-line="173" selection-start-column="4" selection-end-line="173" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/main/java/com/ferdynand/controllers/MainWindowControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/main/java/com/ferdynand/controllers/UserAndModeWindowControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28" selection-start-column="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/main/java/com/ferdynand/model/guess/GuessTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/main/java/com/ferdynand/server/PlayerHandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ferdynand/model/player/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-488">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/main/main/java/com/ferdynand/server/ServerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ferdynand/model/guess/Guess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ferdynand/model/message/ChatMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ferdynand/server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ferdynand/client/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="602">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ferdynand/controllers/MainWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5010">
+          <caret line="189" column="5" lean-forward="true" selection-start-line="189" selection-start-column="5" selection-end-line="189" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ferdynand/view/mainWindow.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ferdynand/controllers/UserAndModeWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Python 3.6 interpreter library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>master-mind-Game</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8 (1)</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
