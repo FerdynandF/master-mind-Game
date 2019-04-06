@@ -1,12 +1,11 @@
 package java.com.ferdynand.controllers;
 
-import main.java.com.ferdynand.controllers.MainWindowController;
 import org.junit.jupiter.api.Test;
 
 class MainWindowControllerTest {
     @Test
     public void colorsConversionCheck(){
-        MainWindowController mwc = new MainWindowController();
+//        MainWindowController mwc = new MainWindowController();
 //
 //        assertEquals(mwc.getColor(1), mwc.getColor(1));
 //        assertEquals(mwc.getColor(2), mwc.getColor(2));
