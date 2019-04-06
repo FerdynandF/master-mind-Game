@@ -3,12 +3,14 @@ package main.java.com.ferdynand.server;
 import main.java.com.ferdynand.model.settings.SettingConnection;
 import main.java.com.ferdynand.model.settings.SettingConnectionDao;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author ferdynandf (https://github.com/FerdynandF)
+ */
 public class Server implements Runnable {
     private volatile int playersOnline = 0;
     private volatile boolean playerJoining = true;

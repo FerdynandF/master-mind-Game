@@ -27,7 +27,11 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.SocketException;
 
+/**
+ * @author ferdynandf (https://github.com/FerdynandF)
+ */
 public class MainWindowController {
+
     private Stage GameStage;
     private Player player = new Player();
     private ObjectOutputStream objectOutputStream;
@@ -49,28 +53,9 @@ public class MainWindowController {
     private Paint whiteColor;
 
     @FXML
-    private Circle boardColor00, boardColor01, boardColor02, boardColor03,
-            boardColor10, boardColor11, boardColor12, boardColor13,
-            boardColor20, boardColor21, boardColor22, boardColor23,
-            boardColor30, boardColor31, boardColor32, boardColor33,
-            boardColor40, boardColor41, boardColor42, boardColor43,
-            boardColor50, boardColor51, boardColor52, boardColor53,
-            boardColor60, boardColor61, boardColor62, boardColor63,
-            boardColor70, boardColor71, boardColor72, boardColor73,
-            boardColor80, boardColor81, boardColor82, boardColor83,
-            boardColor90, boardColor91, boardColor92, boardColor93,
-            boardColor100, boardColor101, boardColor102, boardColor103;
+    private Circle boardColor00, boardColor01, boardColor02, boardColor03, boardColor10, boardColor11, boardColor12, boardColor13, boardColor20, boardColor21, boardColor22, boardColor23, boardColor30, boardColor31, boardColor32, boardColor33, boardColor40, boardColor41, boardColor42, boardColor43, boardColor50, boardColor51, boardColor52, boardColor53, boardColor60, boardColor61, boardColor62, boardColor63, boardColor70, boardColor71, boardColor72, boardColor73, boardColor80, boardColor81, boardColor82, boardColor83, boardColor90, boardColor91, boardColor92, boardColor93, boardColor100, boardColor101, boardColor102, boardColor103;
     @FXML
-    private Circle hint00, hint01, hint02, hint03,
-            hint10, hint11, hint12, hint13,
-            hint20, hint21, hint22, hint23,
-            hint30, hint31, hint32, hint33,
-            hint40, hint41, hint42, hint43,
-            hint50, hint51, hint52, hint53,
-            hint60, hint61, hint62, hint63,
-            hint70, hint71, hint72, hint73,
-            hint80, hint81, hint82, hint83,
-            hint90, hint91, hint92, hint93;
+    private Circle hint00, hint01, hint02, hint03, hint10, hint11, hint12, hint13, hint20, hint21, hint22, hint23, hint30, hint31, hint32, hint33, hint40, hint41, hint42, hint43, hint50, hint51, hint52, hint53, hint60, hint61, hint62, hint63, hint70, hint71, hint72, hint73, hint80, hint81, hint82, hint83, hint90, hint91, hint92, hint93;
     @FXML
     private Circle color1, color2, color3, color4, color5, color6;
     @FXML
@@ -111,34 +96,18 @@ public class MainWindowController {
         chatArea.setWrapText(true);
     }
 
-
     private void initUI() {
-        board = new Circle[][]{
-                {boardColor00, boardColor01, boardColor02, boardColor03},
-                {boardColor10, boardColor11, boardColor12, boardColor13},
-                {boardColor20, boardColor21, boardColor22, boardColor23},
-                {boardColor30, boardColor31, boardColor32, boardColor33},
-                {boardColor40, boardColor41, boardColor42, boardColor43},
-                {boardColor50, boardColor51, boardColor52, boardColor53},
-                {boardColor60, boardColor61, boardColor62, boardColor63},
-                {boardColor70, boardColor71, boardColor72, boardColor73},
-                {boardColor80, boardColor81, boardColor82, boardColor83},
-                {boardColor90, boardColor91, boardColor92, boardColor93},
-                {boardColor100, boardColor101, boardColor102, boardColor103}
-        };
+        board = new Circle[][]{{boardColor00, boardColor01, boardColor02, boardColor03},
+                {boardColor10, boardColor11, boardColor12, boardColor13}, {boardColor20, boardColor21, boardColor22, boardColor23},
+                {boardColor30, boardColor31, boardColor32, boardColor33}, {boardColor40, boardColor41, boardColor42, boardColor43},
+                {boardColor50, boardColor51, boardColor52, boardColor53}, {boardColor60, boardColor61, boardColor62, boardColor63},
+                {boardColor70, boardColor71, boardColor72, boardColor73}, {boardColor80, boardColor81, boardColor82, boardColor83},
+                {boardColor90, boardColor91, boardColor92, boardColor93}, {boardColor100, boardColor101, boardColor102, boardColor103}};
 
-        hint = new Circle[][]{
-                {hint00, hint01, hint02, hint03},
-                {hint10, hint11, hint12, hint13},
-                {hint20, hint21, hint22, hint23},
-                {hint30, hint31, hint32, hint33},
-                {hint40, hint41, hint42, hint43},
-                {hint50, hint51, hint52, hint53},
-                {hint60, hint61, hint62, hint63},
-                {hint70, hint71, hint72, hint73},
-                {hint80, hint81, hint82, hint83},
-                {hint90, hint91, hint92, hint93}
-        };
+        hint = new Circle[][]{{hint00, hint01, hint02, hint03}, {hint10, hint11, hint12, hint13}, {hint20, hint21, hint22, hint23},
+                {hint30, hint31, hint32, hint33}, {hint40, hint41, hint42, hint43}, {hint50, hint51, hint52, hint53},
+                {hint60, hint61, hint62, hint63}, {hint70, hint71, hint72, hint73}, {hint80, hint81, hint82, hint83},
+                {hint90, hint91, hint92, hint93}};
 
         setOpacityInHints();
         colors = new Circle[] { color1, color2, color3, color4, color5, color6};
@@ -180,7 +149,6 @@ public class MainWindowController {
         }
     }
 
-
     public Player getPlayer() {
         return player;
     }
@@ -188,7 +156,6 @@ public class MainWindowController {
     public void setGameStage(Stage gameStage) {
         GameStage = gameStage;
     }
-
 
     public void setColor(MouseEvent mouseEvent) {
         Circle selectedCircle = (Circle)mouseEvent.getSource();
@@ -296,7 +263,6 @@ public class MainWindowController {
         enableInputToCodeMaker();
         gameRound = 0;
 
-
     }
 
     private void displayLose() {
@@ -361,15 +327,11 @@ public class MainWindowController {
         }
     }
 
-    private void displayHint(int currentHint, int index)
-    {
-        if (currentHint == 12)
-        {
+    private void displayHint(int currentHint, int index) {
+        if (currentHint == 12) {
             hint[gameRound][index].setFill(Color.BLACK);
             hint[gameRound][index].setOpacity(1);
-        }
-        else if (currentHint == 13)
-        {
+        } else if (currentHint == 13) {
             hint[gameRound][index].setFill(Color.WHITE);
             hint[gameRound][index].setOpacity(1);
         }

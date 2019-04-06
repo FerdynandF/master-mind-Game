@@ -16,7 +16,11 @@ import main.java.com.ferdynand.model.player.Player;
 
 import java.io.IOException;
 
+/**
+ * @author ferdynandf (https://github.com/FerdynandF)
+ */
 public class UserAndModeWindowController {
+
     @FXML
     public TextField userNameTextField;
     @FXML
@@ -30,6 +34,7 @@ public class UserAndModeWindowController {
     public void initialize(){
 
         Platform.runLater(new Runnable() {
+
             @Override
             public void run() {
                 userNameTextField.requestFocus();

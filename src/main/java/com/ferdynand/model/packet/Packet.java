@@ -5,6 +5,9 @@ import main.java.com.ferdynand.model.message.ChatMessage;
 
 import java.io.Serializable;
 
+/**
+ * @author ferdynandf (https://github.com/FerdynandF)
+ */
 public class Packet implements Serializable {
     private ChatMessage chatMessage = new ChatMessage();
     private Guess guessOrHint;

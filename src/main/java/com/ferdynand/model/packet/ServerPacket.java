@@ -4,6 +4,9 @@ import main.java.com.ferdynand.model.player.Player;
 
 import java.util.ArrayList;
 
+/**
+ * @author ferdynandf (https://github.com/FerdynandF)
+ */
 public class ServerPacket extends Packet {
     private String action;
     private ArrayList<Player> players;

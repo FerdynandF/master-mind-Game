@@ -2,7 +2,11 @@ package main.java.com.ferdynand.model.guess;
 
 import java.io.Serializable;
 
+/**
+ * @author ferdynandf (https://github.com/FerdynandF)
+ */
 public class Guess implements Serializable {
+
     private byte[] clientGuessOrHint;
     private int gameRound;
     private static final long serialVersionUID = 7987345586021750378L;

@@ -5,6 +5,9 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
 
+/**
+ * @author ferdynandf (https://github.com/FerdynandF)
+ */
 public class SettingConnectionDao {
     private static SettingConnectionDao instance;
 

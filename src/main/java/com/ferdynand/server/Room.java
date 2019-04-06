@@ -11,6 +11,9 @@ import java.net.ServerSocket;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author ferdynandf (https://github.com/FerdynandF)
+ */
 public class Room implements Runnable{
     private ServerSocket serverSocket;
     private Server server;

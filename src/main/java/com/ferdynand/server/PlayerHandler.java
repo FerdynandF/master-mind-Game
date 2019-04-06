@@ -10,6 +10,9 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.util.Arrays;
 
+/**
+ * @author ferdynandf (https://github.com/FerdynandF)
+ */
 public class PlayerHandler implements Runnable {
     private Socket socket;
     private Server server;

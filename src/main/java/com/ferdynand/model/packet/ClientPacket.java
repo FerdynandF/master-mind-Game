@@ -2,6 +2,9 @@ package main.java.com.ferdynand.model.packet;
 
 import main.java.com.ferdynand.model.player.Player;
 
+/**
+ * @author ferdynandf (https://github.com/FerdynandF)
+ */
 public class ClientPacket extends Packet {
     private Player player;
 

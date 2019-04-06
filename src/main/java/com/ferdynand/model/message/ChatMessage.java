@@ -2,7 +2,11 @@ package main.java.com.ferdynand.model.message;
 
 import java.io.Serializable;
 
+/**
+ * @author ferdynandf (https://github.com/FerdynandF)
+ */
 public class ChatMessage implements Serializable {
+
     private String username;
     private String message;
 

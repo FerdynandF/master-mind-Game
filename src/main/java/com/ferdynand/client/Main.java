@@ -7,7 +7,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.java.com.ferdynand.controllers.UserAndModeWindowController;
 
+/**
+ * @author ferdynandf (https://github.com/FerdynandF)
+ */
 public class Main extends Application {
+
     private final FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/UserAndModeWindow.fxml"));
 
     @Override

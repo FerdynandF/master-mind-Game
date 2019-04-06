@@ -3,6 +3,9 @@ package main.java.com.ferdynand.model.settings;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * @author ferdynandf (https://github.com/FerdynandF)
+ */
 @XmlRootElement
 public class SettingConnection {
     private String ip;

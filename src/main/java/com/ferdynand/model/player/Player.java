@@ -2,6 +2,9 @@ package main.java.com.ferdynand.model.player;
 
 import java.io.Serializable;
 
+/**
+ * @author ferdynandf (https://github.com/FerdynandF)
+ */
 public class Player implements Serializable {
     private String username;
     private int id;
